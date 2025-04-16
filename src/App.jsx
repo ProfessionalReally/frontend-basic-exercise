@@ -1,14 +1,17 @@
 import './App.css'
+import {createElement} from "react";
 
 function App() {
     //Declarative
-    return (
-        <div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <p>The year is ${new Date().getFullYear()}</p>
-            </div>
-        </div>
+    return createElement(
+        'div',
+        null,
+        createElement('h1', null, 'Vite + React'),
+        createElement(
+            'div',
+            {className: 'card'},
+            createElement('h2', null, `The year is ${new Date().getFullYear()}`)
+        )
     )
 }
 
